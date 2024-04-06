@@ -10,9 +10,8 @@ import WeBest from "@/components/WeBest";
 import Catalog from "@/components/Catalog";
 import Brends from "@/components/Brends";
 import News from "@/components/News";
-import Accordion from "@/components/About";
-import About from "@/components/About";
 import Footer from "@/containers/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 interface Direction {
   id: number;
@@ -67,27 +66,23 @@ const CatalogPage: React.FC = () => {
     { id: 16, title: "Кабинеты под ключ" },
   ];
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Category", href: "/catalog" },
+  ];
+
   return (
     <section>
       <Header />
-      <div className="py-10 px-16 ">
+      <div className="py-10 px-8 md:px-16 lg:px-20">
         <h1 className="text-[#202020] text-5xl font-medium">Каталог</h1>
 
         <div className="flex items-center gap-4 py-5">
-          <Link
-            href={"/"}
-            className="text-sm font-normal leading-5 text-[#7A7687]"
-          >
-            Главная
-          </Link>
-          <Image src={vector} alt="" />
-          <Link href={"/catalog"} className="text-sm font-normal leading-5">
-            Каталог
-          </Link>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
 
-        <div className="flex justify-between gap-3">
-          <div className="flex flex-col w-1/4 h-auto border border-[#E5E2EE] rounded-lg gap-4 py-4 px-5">
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex flex-col w-full md:w-1/4 h-auto border border-[#E5E2EE] rounded-lg gap-4 py-4 px-5">
             <div>
               <h3 className="text-[#202020] text-xl font-medium">
                 Направления
@@ -108,8 +103,8 @@ const CatalogPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-3 w-3/4 gap-3 self-start">
-            {currentItems.map((data: CatalogItem) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full md:w-3/4">
+            {currentItems.map((data) => (
               <Link
                 href={"/"}
                 key={data.id}
@@ -131,6 +126,7 @@ const CatalogPage: React.FC = () => {
             ))}
           </div>
         </div>
+
         {/* Pagination */}
         <div className="flex justify-center mt-8">
           <ul className="flex gap-2">

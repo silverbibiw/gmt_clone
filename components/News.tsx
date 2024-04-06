@@ -22,7 +22,7 @@ const News: React.FC = () => {
       {/* CARDS */}
       <Swiper
         spaceBetween={10}
-        slidesPerView={2.5}
+        slidesPerView={2.3}
         breakpoints={{
           768: {
             slidesPerView: 2,

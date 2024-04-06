@@ -47,7 +47,7 @@ const Category: React.FC = () => {
   return (
     <section className="px-16 py-5 gap-12">
       <div className="flex items-center justify-between">
-        <h2 className="text-[#202020] text-3xl font-medium leading-[120%]">
+        <h2 className="text-[#202020] text-3xl font-medium leading-[120%] my-10">
           Популярные категории
         </h2>
         <Link href={"/"}>

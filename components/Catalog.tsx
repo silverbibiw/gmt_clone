@@ -27,7 +27,7 @@ const Catalog: React.FC = () => {
       </div>
       <Swiper
         spaceBetween={20}
-        slidesPerView={3.5}
+        slidesPerView={4.5}
         breakpoints={{
           375: {
             slidesPerView: 1,
@@ -42,49 +42,58 @@ const Catalog: React.FC = () => {
       >
         {catalogList.map((item: CatalogItem) => (
           <SwiperSlide key={item.id}>
-            <div className="flex gap-3 rounded-lg">
-              <div className="!mr-0 mb-20 flex flow-row items-start justify-center">
-                <div className="w-full p-0 rounded-lg border">
-                  <div className="relative flex items-center justify-center rounded-lg bg-white px-4 pt-16 pb-9">
-                    <div className="absolute top-0 left-0 w-full py-4 px-3 flex justify-between">
-                      <p className="py-1 px-3 text-[#088269] rounded-[60px] border border-[#088269] bg-[#E1EFE6] text-sm font-medium flex items-center justify-center">
-                        Новинка
-                      </p>
-                      <div className="flex gap-3">
-                        <Link href={"/"}>
-                          <Image src={fav} alt="" className="object-contain" />
-                        </Link>
-                        <Link href={"/"}>
-                          <Image
-                            src={comparison}
-                            alt=""
-                            className="object-contain"
-                          />
-                        </Link>
+            <Link href={"/productpage"}>
+              <div className="flex gap-3 rounded-lg">
+                <div className="!mr-0 mb-20 flex flow-row items-start justify-center">
+                  <div className="w-full p-0 rounded-lg border">
+                    <div className="relative flex items-center justify-center rounded-lg bg-white px-4 pt-16 pb-9">
+                      <div className="absolute top-0 left-0 w-full py-4 px-3 flex justify-between">
+                        <p className="py-1 px-3 text-[#088269] rounded-[60px] border border-[#088269] bg-[#E1EFE6] text-sm font-medium flex items-center justify-center">
+                          Новинка
+                        </p>
+                        <div className="flex gap-3">
+                          <Link href={"/"}>
+                            <Image
+                              src={fav}
+                              alt=""
+                              className="object-contain"
+                            />
+                          </Link>
+                          <Link href={"/"}>
+                            <Image
+                              src={comparison}
+                              alt=""
+                              className="object-contain"
+                            />
+                          </Link>
+                        </div>
                       </div>
+                      <Image
+                        src={item.image}
+                        alt=""
+                        className="w-[250px] h-[250px] object-cover"
+                      />
                     </div>
-                    <Image
-                      src={item.image}
-                      alt=""
-                      className="w-[250px] h-[250px] object-cover"
-                    />
-                  </div>
-                  <div className="rounded-[40px] w-full flex flex-col py-5 px-4 gap-3">
-                    <h3 className="text-[#202020] text-lg font-semibold">
-                      {item.title}
-                    </h3>
-                    <div className="catalof-text">
-                      <p className="text-[#7A7687] text-base font-medium leading-[140%]">
-                        {item.text}
-                      </p>
-                      <button className="text-[#088269] bg-[#F0F0F0] text-sm font-semibold rounded-[50px] border py-2 px-8 mt-3">
-                        Получить КП
-                      </button>
+                    <div className="rounded-[40px] w-full flex flex-col py-5 px-4 gap-3">
+                      <h3 className="text-[#202020] text-lg font-semibold">
+                        {item.title}
+                      </h3>
+                      <div className="catalof-text">
+                        <p className="text-[#7A7687] text-base font-medium leading-[140%]">
+                          {item.text}
+                        </p>
+                        <p className="text-[#202020] text-lg font-semibold mt-10">
+                          300 000 руб.
+                        </p>
+                        <button className="text-[#088269] bg-[#F0F0F0] text-sm font-semibold rounded-[50px] border py-2 px-8 mt-3">
+                          Получить КП
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
