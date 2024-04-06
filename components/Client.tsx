@@ -13,22 +13,22 @@ interface ClientItem {
 const Client: React.FC = () => {
   return (
     <section className="flex flex-col gap-24 py-24 bg-[#E5E4ED]">
-      <div className="flex justify-between px-16">
-        <div className="text-[#202020] text-3xl font-medium leading-[120%]">
+      <div className="flex justify-between items-start px-16">
+        <div className="text-[#202020] text-3xl font-medium leading-[120%] mb-10">
           Наши клиенты
         </div>
-        <div className="text-[#202020] text-5xl font-medium leading-[110%]">
+        <div className="text-[#202020] text-5xl font-medium leading-[110%] text-start mb-10">
           БОЛЕЕ
           <span className="text-[#088269]"> 5000</span>
           <br />
           УСПЕШНЫХ ПРОЕКТОВ
         </div>
       </div>
-      <div className="swiper swiper_horizontal min-w-[0%]">
-        <div className="border bg-[#E5E4ED] rounded-lg w-full h-full relative z-[1] flex box-border">
+      <div className="swiper swiper_horizontal px-16">
+        <div className="border bg-[#E5E4ED] rounded-lg w-full relative z-[1]">
           <Marquee>
             {clientsList.map((item: ClientItem) => (
-              <div key={item.id} className="swiper-slide slide4 w-[365px] mr-5">
+              <div key={item.id} className="w-[250px] mr-5">
                 <div className="border-[1px] border-[#E5E2EE]">
                   <div className="h-52 bg-white flex justify-center items-center p-3 border rounded-t-lg">
                     <Image
@@ -37,8 +37,8 @@ const Client: React.FC = () => {
                       className="h-auto w-auto max-w-full max-h-full object-contain"
                     />
                   </div>
-                  <div className="min-h-[108px] py-5 pr-[69px] pl-6 bg-[#F8F7F3] rounded-b-lg">
-                    <h2 className="text-[#202020] text-base font-medium leading-[140%]">
+                  <div className="min-h-[108px] py-5 px-6 bg-[#F8F7F3] rounded-b-lg">
+                    <h2 className="text-[#202020] text-base font-medium leading-[140%] text-center">
                       {item.title}
                     </h2>
                   </div>
@@ -51,4 +51,5 @@ const Client: React.FC = () => {
     </section>
   );
 };
+
 export default Client;

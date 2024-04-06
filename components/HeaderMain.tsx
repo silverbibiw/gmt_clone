@@ -1,5 +1,4 @@
 import React from "react";
-import "../app/globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/Logo.svg";
@@ -11,7 +10,7 @@ import trash from "../public/Icons/trash.svg";
 
 const HeaderMain: React.FC = () => {
   return (
-    <div className="home_head-main flex justify-between px-16 py-5 border-b-[1px] relative">
+    <div className="home_head-main flex flex-col md:flex-row justify-between items-center px-4 md:px-16 lg:px-20 py-5 border-b-[1px] relative">
       <div className="flex items-center gap-11">
         <a href="logo">
           <Image src={logo} alt="main logo" />
@@ -43,6 +42,7 @@ const HeaderMain: React.FC = () => {
                     </svg>
                   </span>
                 </div>
+                {/* Category List */}
                 <ul className="w-60 absolute hidden bg-white text-gray-700 rounded border font-normal text-sm p-3 group-hover:block top-7 -left-2 z-10 justify-start border-gray-300">
                   <li className="mb-2">
                     <Link href={"/"} className="hover:text-green-600">
@@ -74,62 +74,6 @@ const HeaderMain: React.FC = () => {
                       Гинекология
                     </Link>
                   </li>
-
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Гистология
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Косметология
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Оториноларингология
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Рентгенология и томография
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Стерилизация
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Физиотерапия и реабилитация
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Функциональная диагностика
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Эндоскопия
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Новинки
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Распродажи
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href={"/"} className="hover:text-green-600">
-                      Кабинеты под ключ
-                    </Link>
-                  </li>
                 </ul>
               </span>
             </div>
@@ -140,6 +84,7 @@ const HeaderMain: React.FC = () => {
               name=""
               id="title-search-input"
               placeholder="Поиск"
+              className="w-full"
             />
           </form>
           <div className="flec items-center justify-center p-[9px]">
@@ -147,21 +92,19 @@ const HeaderMain: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center">
+
+      <div className="hidden md:block">
         <p className="text-[#7A7687] font-medium text-xs">
           Пн-Пт с 09:00-19:00
           <br />
           Сб-Вс - выходной
         </p>
       </div>
-      <div className="flex items-center gap-5">
+      {/* User Links */}
+      <div className="flex items-center gap-5 mt-3 md:mt-0">
         <Link href={"/"} className="hover:fill-slate-500">
           <div className="flex flex-col items-center justify-center gap-1">
-            <Image
-              src={login}
-              alt="fav icon"
-              className="text-blue-500 fill-current"
-            />
+            <Image src={login} alt="login icon" />
             <p className="text-[#7A7687] font-medium text-xs">Войти</p>
           </div>
         </Link>

@@ -7,7 +7,7 @@ import location from "../public/Icons/location.svg";
 
 const HeaderFooter: React.FC = () => {
   return (
-    <div className="home_head-footer w-full px-16 py-[10px] flex justify-between border-b border-[#E5E2EE]">
+    <div className="home_head-footer w-full px-4 md:px-16 py-4 md:py-[10px] flex flex-col md:flex-row justify-between border-b border-[#E5E2EE]">
       <nav className="flex items-center">
         <ul className="flex items-center gap-5 list-none">
           <li className="flex items-center gap-1">
@@ -48,7 +48,7 @@ const HeaderFooter: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <div className="flex items-center gap-5">
+      <div className="flex flex-col md:flex-row items-center gap-5">
         <p className="flex items-center gap-2">
           Москва
           <Image src={location} alt="location" />
@@ -65,4 +65,5 @@ const HeaderFooter: React.FC = () => {
     </div>
   );
 };
+
 export default HeaderFooter;

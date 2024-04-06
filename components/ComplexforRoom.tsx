@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,6 +12,7 @@ import img3 from "../public/Images/complex3.png";
 import left from "../public/Icons/left.svg";
 import right from "../public/Icons/right.svg";
 import Image from "next/image";
+import { Navigation } from "swiper/modules";
 
 SwiperCore.use([Navigation]);
 
@@ -35,7 +35,7 @@ const ComplexforRoom: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col gap-11 py-28 px-16 relative">
+    <section className="px-16 py-10 md:py-20 lg:py-28 relative">
       <div>
         <h2 className="text-[#202020] text-3xl font-medium leading-[120%]">
           Комплексное оснащение кабинетов
@@ -52,22 +52,24 @@ const ComplexforRoom: React.FC = () => {
             prevEl: ".prev-button",
             nextEl: ".next-button",
           }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
           initialSlide={currentIndex}
         >
           {complexforroom.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="w-[506px] flex flex-row items-start mb-[70px] mr-5">
-                <div>
-                  <Image
-                    src={item.image}
-                    alt=""
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="w-full h-[15%] flex justify-start items-center px-6 py-5">
-                    <h3 className="text-[#202020] text-base font-medium leading-[140%]">
-                      {item.title}
-                    </h3>
-                  </div>
+              <div className="w-full h-full mb-5 md:mb-0 md:mr-5">
+                <Image src={item.image} alt="" className="object-cover" />
+                <div className="w-full h-[15%] flex justify-start items-center px-6 py-5">
+                  <h3 className="text-[#202020] text-base font-medium leading-[140%]">
+                    {item.title}
+                  </h3>
                 </div>
               </div>
             </SwiperSlide>

@@ -15,7 +15,7 @@ import FooterBottom from "@/components/FooterBottom";
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className="px-16">
       <FooterTop />
       <div className="w-full h-[1px] bg-[#F8F7F3] mt-16"></div>
       <FooterBottom />

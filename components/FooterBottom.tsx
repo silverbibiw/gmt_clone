@@ -12,9 +12,9 @@ import mir from "../public/Icons/mir.svg";
 const FooterBottom: React.FC = () => {
   return (
     <footer>
-      <div className="flex items-start justify-between pt-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-start gap-6">
         <div className="flex flex-col gap-3">
-          <Image src={logo} alt="" className="text-white" />
+          <Image src={logo} alt="" />
           <div>ООО «ГЛОБАЛ МЕДИКАЛ ТРЕЙД»</div>
         </div>
         <div className="flex flex-col items-start gap-3">
@@ -27,12 +27,10 @@ const FooterBottom: React.FC = () => {
             >
               <Image src={tg} alt="" />
             </a>
-
             <Image src={up} alt="" />
           </div>
         </div>
-
-        <ul>
+        <ul className="flex flex-col gap-3 md:gap-6">
           <li>
             <Link href="#">Партнерская программа</Link>
           </li>
@@ -43,7 +41,7 @@ const FooterBottom: React.FC = () => {
             <Link href="#">Реквизиты</Link>
           </li>
         </ul>
-        <ul>
+        <ul className="flex flex-col gap-3 md:gap-6">
           <li>
             <Link href="https://global-mt.ru/politika-konfidentsialnosti.php">
               Политика конфиденциальности
@@ -56,7 +54,6 @@ const FooterBottom: React.FC = () => {
             <Link href="#">Карта сайта</Link>
           </li>
         </ul>
-
         <div className="flex flex-col gap-3">
           <div>Способы оплаты</div>
           <div className="flex items-center gap-3">
@@ -66,12 +63,11 @@ const FooterBottom: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className="container flex items-center justify-between pt-16">
-        <div>
-          © 2024 Медоборудование <br /> Все права защищены
+      <div className="mt-8 flex gap-10 text-center text-sm text-white">
+        <div className="text-start">
+          © 2024 Медоборудование Все права защищены
         </div>
-        <p className="opacity-[0.6]">
+        <p className="opacity-60 mt-4">
           Информация на данном сайте носит справочный характер и не является
           публичной офертой, определяемой положениями Статьи 437 Гражданского
           кодекса Российской Федерации

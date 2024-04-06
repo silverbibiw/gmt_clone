@@ -96,7 +96,6 @@ form {
 footer {
   display: flex;
   flex-direction: column;
-  padding: 20px 65px;
   padding-top: 40px;
   background: var(--unnamed, #088269);
   color: #f8f7f3;

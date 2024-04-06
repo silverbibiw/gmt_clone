@@ -27,16 +27,16 @@ const Catalog: React.FC = () => {
       </div>
       <Swiper
         spaceBetween={20}
-        slidesPerView={1}
+        slidesPerView={3.5}
         breakpoints={{
-          640: {
-            slidesPerView: 2,
+          375: {
+            slidesPerView: 1,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
-          1024: {
-            slidesPerView: 4,
+          1440: {
+            slidesPerView: 3,
           },
         }}
       >

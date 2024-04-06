@@ -36,16 +36,16 @@ const WeBest: React.FC = () => {
     },
   ];
   return (
-    <section className="flex flex-col px-16 py-16 gap-10">
+    <section className="px-16 py-16 gap-10 md:py-20 lg:py-28">
       <div>
-        <h2 className="text-[#202020] text-3xl font-medium leading-[120%]">
+        <h2 className="text-[#202020] text-3xl font-medium leading-[120%] mb-10">
           Почему выбирают нас?
         </h2>
       </div>
-      <div className="flex justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:justify-between md:gap-4">
         {webestdata.map((data) => (
-          <div key={data.id}>
-            <div className="w-80 h-80 flex flex-col items-center justify-center gap-11 border border-[#E5E2EE] rounded-lg p-20">
+          <div key={data.id} className="w-full md:w-80">
+            <div className="w-full h-80 flex flex-col items-center justify-center gap-11 border border-[#E5E2EE] rounded-lg p-20">
               <div>
                 <Image src={data.icon} alt="icons" className="w-full" />
               </div>

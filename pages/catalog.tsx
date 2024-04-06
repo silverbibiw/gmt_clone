@@ -12,6 +12,7 @@ import Brends from "@/components/Brends";
 import News from "@/components/News";
 import Accordion from "@/components/About";
 import About from "@/components/About";
+import Footer from "@/containers/Footer";
 
 interface Direction {
   id: number;
@@ -155,6 +156,7 @@ const CatalogPage: React.FC = () => {
       <Catalog />
       <Brends />
       <News />
+      <Footer />
     </section>
   );
 };

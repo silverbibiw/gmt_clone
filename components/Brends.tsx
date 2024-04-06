@@ -34,12 +34,23 @@ const Brends: React.FC = () => {
       <Swiper
         spaceBetween={20}
         slidesPerView={4.5}
+        breakpoints={{
+          375: {
+            slidesPerView: 1.2,
+          },
+          768: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 4.5,
+          },
+        }}
         navigation={{ prevEl: ".prev", nextEl: ".next" }}
         className="mySwiper"
       >
         {BrendsList.map((item: BrendsItem) => (
           <SwiperSlide key={item.id}>
-            <div className="w-[300px] mr-5 border rounded-lg border-[#E5E2EE]">
+            <div className="w-[250px] mr-5 border rounded-lg border-[#E5E2EE]">
               <div className="h-52 bg-white flex justify-center items-center p-3 border-b rounded-t-lg">
                 <Image
                   src={item.image}

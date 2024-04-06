@@ -14,7 +14,7 @@ const PaginationCard: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <section className="px-16 min-w-0">
+    <section className="px-4 md:px-16 min-w-0">
       <div className="bg-[#E5E4ED] rounded-[10px] relative">
         <Swiper
           spaceBetween={20}
@@ -29,14 +29,12 @@ const PaginationCard: React.FC = () => {
           initialSlide={currentIndex}
         >
           <SwiperSlide>
-            <div className="flex justify-between gap-5 pl-[50px] pt-8 pb-8 relative">
-              <div className="relative flex flex-col gap-5">
-                <div>
-                  <h2 className="text-[#202020] text-5xl font-medium leading-[110%]">
-                    GMT эксклюзивный <br />
-                    поставщик Pusen в РФ
-                  </h2>
-                </div>
+            <div className="flex flex-col justify-between gap-5 md:flex-row md:pl-[50px] md:pt-8 md:pb-8 relative">
+              <div className="relative md:w-1/2">
+                <h2 className="text-[#202020] text-5xl font-medium leading-[110%]">
+                  GMT эксклюзивный <br />
+                  поставщик Pusen в РФ
+                </h2>
                 <p className="text-[#] text-base font-medium leading-[140%]">
                   Одноразовый гибкий уретероскоп Pusen — достойная
                   <br />
@@ -53,7 +51,7 @@ const PaginationCard: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative md:w-1/2">
                 <Image
                   src={banner}
                   alt="banner"
@@ -63,13 +61,11 @@ const PaginationCard: React.FC = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex justify-between gap-5 pl-[50px] pt-8 pb-8 relative">
-              <div className="relative flex flex-col gap-5">
-                <div>
-                  <h2 className="text-[#202020] text-5xl font-medium leading-[110%]">
-                    Sonoscape HD-350
-                  </h2>
-                </div>
+            <div className="flex flex-col justify-between gap-5 md:flex-row md:pl-[50px] md:pt-8 md:pb-8 relative">
+              <div className="relative md:w-1/2">
+                <h2 className="text-[#202020] text-5xl font-medium leading-[110%]">
+                  Sonoscape HD-350
+                </h2>
                 <p className="text-[#] text-base font-medium leading-[140%]">
                   Эндоскопическая видеосистема <br />
                   Sonoscape HD-350 <br />
@@ -87,7 +83,7 @@ const PaginationCard: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative md:w-1/2">
                 <Image
                   src={banner2}
                   alt="banner"

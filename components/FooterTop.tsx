@@ -6,11 +6,11 @@ import fav from "../public/Icons/arrowright.svg";
 const FooterTop: React.FC = () => {
   return (
     <footer>
-      <div className="flex items-start justify-between gap-32 text-white">
-        <div className="flex flex-col items-start gap-5">
-          <h2>Покупателям</h2>
+      <div className="flex justify-between gap-10 md:gap-16 text-white pb-10">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-lg md:text-xl font-semibold">Покупателям</h2>
           <div className="w-full h-[1px] bg-[#F8F7F3]"></div>
-          <div className="w-full flex justify-between gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <ul>
               <li>
                 <Link href="#">О компании</Link>
@@ -56,10 +56,10 @@ const FooterTop: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-start gap-5">
-          <h2>Каталог</h2>
+        <div className="flex flex-col gap-5">
+          <h2 className="text-lg md:text-xl font-semibold">Каталог</h2>
           <div className="w-full h-[1px] bg-[#F8F7F3]"></div>
-          <div className="w-full flex justify-between gap-10">
+          <div className="flex gap-10">
             <ul>
               <li>
                 <Link href="#">Реанимация</Link>
@@ -119,10 +119,12 @@ const FooterTop: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-start gap-5">
-          <div className="flex flex-col items-start gap-5">Контакты</div>
-          <div className="w-full h-[1px] bg-[#F8F7F3]"></div>
-          <ul>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col items-start gap-5">
+            <h2 className="text-lg md:text-xl font-semibold">Контакты</h2>
+          </div>
+          <div className="h-[1px] bg-[#F8F7F3]"></div>
+          <ul className="grid gap-3">
             <li>
               <Link href="#">
                 Адрес: <br />

@@ -1,5 +1,4 @@
 import React from "react";
-import "../app/globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import img1 from "../public/Images/catigory.jpg";
@@ -46,7 +45,7 @@ const Category: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col py-5 px-16 gap-12">
+    <section className="px-16 py-5 gap-12">
       <div className="flex items-center justify-between">
         <h2 className="text-[#202020] text-3xl font-medium leading-[120%]">
           Популярные категории
@@ -58,7 +57,7 @@ const Category: React.FC = () => {
         </Link>
       </div>
       {/* cards */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         <div className="flex flex-col items-center justify-center border border-[#E5E2EE] bg-white rounded-[10px]">
           <div className="w-full flex items-center justify-center h-full my-10">
             <Image
@@ -88,20 +87,21 @@ const Category: React.FC = () => {
           </div>
         </div>
         {category.map((data) => (
-          <div key={data.id}>
-            <div className="flex flex-col items-center justify-center border border-[#E5E2EE] bg-white rounded-[10px]">
-              <div className="w-full flex items-center justify-center my-10">
-                <Image
-                  src={data.image}
-                  alt="image"
-                  className="w-48 h-48 object-cover"
-                />
-              </div>
-              <div className="w-full border border-[#E5E2EE] bg-[#F8F7F3] rounded-b-[10px]">
-                <h2 className="text-[#202020] text-base font-medium leading-[140%] py-5 px-6">
-                  {data.title}
-                </h2>
-              </div>
+          <div
+            key={data.id}
+            className="flex flex-col items-center justify-center border border-[#E5E2EE] bg-white rounded-[10px]"
+          >
+            <div className="w-full flex items-center justify-center my-10">
+              <Image
+                src={data.image}
+                alt="image"
+                className="w-48 h-48 object-cover"
+              />
+            </div>
+            <div className="w-full border border-[#E5E2EE] bg-[#F8F7F3] rounded-b-[10px]">
+              <h2 className="text-[#202020] text-base font-medium leading-[140%] py-5 px-6">
+                {data.title}
+              </h2>
             </div>
           </div>
         ))}
