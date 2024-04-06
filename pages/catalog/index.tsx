@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/containers/Header";
-import vector from "../public/Icons/vector.svg";
-import rightarrow from "../public/Icons/rightarrow.svg";
-import catalogList from "../assets/catalog";
+import rightarrow from "../../public/Icons/rightarrow.svg";
+import catalogList from "../../assets/catalog";
 import ComplexforRoom from "@/components/ComplexforRoom";
 import WeBest from "@/components/WeBest";
 import Catalog from "@/components/Catalog";
@@ -17,14 +16,6 @@ interface Direction {
   id: number;
   title: string;
 }
-
-interface CatalogItem {
-  id: number;
-  image: any;
-  title: string;
-  text: string;
-}
-
 const CatalogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;

@@ -1,16 +1,23 @@
+import catalogList from "@/assets/catalog";
 import React, { useState } from "react";
-import "../app/globals.css";
+import "../../../app/globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import fav from "../public/Icons/favourites.svg";
-import product from "../public/Images/product.png";
-import comparison from "../public/Icons/comparison.svg";
-import stars from "../public/Icons/stars.svg";
+import fav from "../../../public/Icons/favourites.svg";
+import product from "../../../public/Images/product.png";
+import comparison from "../../../public/Icons/comparison.svg";
+import stars from "../../../public/Icons/stars.svg";
 import Header from "@/containers/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/containers/Footer";
+import { notFound, redirect, RedirectType, usePathname } from "next/navigation";
+import { NextResponse } from "next/server";
 
 const ProductPage: React.FC = () => {
+  const params = usePathname();
+  const slug = params?.toString().split("/")[2];
+  const data = catalogList.find((s) => s.slug == slug);
+
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleTabClick = (index: number) => {
@@ -43,7 +50,7 @@ const ProductPage: React.FC = () => {
           <div className="flex flex-col items-center rounded-lg border bg-white py-10 relative w-[55%]">
             <div className="absolute top-0 left-0 w-full py-4 px-3 flex justify-between">
               <p className="py-1 px-3 text-[#088269] rounded-[60px] border border-[#088269] bg-[#E1EFE6] text-sm font-medium flex items-center justify-center">
-                Новинка
+                Новинка {data?.title}
               </p>
               <div className="flex gap-3">
                 <Link href={"/"}>
@@ -56,7 +63,7 @@ const ProductPage: React.FC = () => {
             </div>
             <div className="w-full h-[400px]">
               <Image
-                src={product}
+                src={data?.image as unknown as string}
                 alt=""
                 className="w-full h-full object-contain"
               />
@@ -64,7 +71,7 @@ const ProductPage: React.FC = () => {
             <div className="w-full h-auto pl-[5%]">
               <div className="!w-[50px] h-[50px] border border-[#088269] rounded-md">
                 <Image
-                  src={product}
+                  src={data?.image as unknown as string}
                   alt=""
                   className="w-full h-full object-contain rounded-md"
                 />
@@ -74,7 +81,7 @@ const ProductPage: React.FC = () => {
           {/* left side info*/}
           <div className="w-[45%] flex flex-col gap-3">
             <h1 className="text-[#202020] text-5xl font-medium">
-              Анализатор мочи MIND UA-66
+              {data?.title}
             </h1>
             <div className="flex flex-col gap-1 mt-4">
               <div className="flex gap-3">
@@ -82,10 +89,11 @@ const ProductPage: React.FC = () => {
                 <p className="text-xs font-medium leading-4">4.0</p>
               </div>
               <p className="text-[#7A7687] text-sm font-normal">
-                Категория: Лабораторное оборудование
+                {data?.text}
+                {/* Категория: {data?.text}
                 <br />
                 Производитель: Lorem
-                <br />
+                <br /> */}
                 Артикул: 213134
                 <br />В наличии
               </p>

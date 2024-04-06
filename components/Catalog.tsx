@@ -42,8 +42,8 @@ const Catalog: React.FC = () => {
       >
         {catalogList.map((item: CatalogItem) => (
           <SwiperSlide key={item.id}>
-            <Link href={"/productpage"}>
-              <div className="flex gap-3 rounded-lg">
+            <div className="flex gap-3 rounded-lg">
+              <Link href={"/productpage"}>
                 <div className="!mr-0 mb-20 flex flow-row items-start justify-center">
                   <div className="w-full p-0 rounded-lg border">
                     <div className="relative flex items-center justify-center rounded-lg bg-white px-4 pt-16 pb-9">
@@ -92,8 +92,8 @@ const Catalog: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
