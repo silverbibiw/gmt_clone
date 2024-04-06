@@ -6,14 +6,10 @@ import vertical from "../public/Icons/vertical.svg";
 interface AccordionProps {
   title: string;
   answer: string;
-  moredetails: any;
+  moredetails: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({
-  title,
-  answer,
-  moredetails,
-}) => {
+const About: React.FC<AccordionProps> = ({ title, answer, moredetails }) => {
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
@@ -70,4 +66,4 @@ const Accordion: React.FC<AccordionProps> = ({
   );
 };
 
-export default Accordion;
+export default About;

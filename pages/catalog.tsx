@@ -5,6 +5,13 @@ import Header from "@/containers/Header";
 import vector from "../public/Icons/vector.svg";
 import rightarrow from "../public/Icons/rightarrow.svg";
 import catalogList from "../assets/catalog";
+import ComplexforRoom from "@/components/ComplexforRoom";
+import WeBest from "@/components/WeBest";
+import Catalog from "@/components/Catalog";
+import Brends from "@/components/Brends";
+import News from "@/components/News";
+import Accordion from "@/components/About";
+import About from "@/components/About";
 
 interface Direction {
   id: number;
@@ -22,7 +29,6 @@ const CatalogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
-  // Load current page from localStorage on component mount
   useEffect(() => {
     const storedPage = localStorage.getItem("currentPage");
     if (storedPage) {
@@ -38,7 +44,6 @@ const CatalogPage: React.FC = () => {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    // Store current page in localStorage
     localStorage.setItem("currentPage", String(pageNumber));
   };
 
@@ -145,6 +150,11 @@ const CatalogPage: React.FC = () => {
           </ul>
         </div>
       </div>
+      <ComplexforRoom />
+      <WeBest />
+      <Catalog />
+      <Brends />
+      <News />
     </section>
   );
 };
